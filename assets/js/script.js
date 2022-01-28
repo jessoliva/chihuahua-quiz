@@ -252,6 +252,10 @@ function clickedAnswer(event) {
 
         // delay display of end screen
         setTimeout(function () {
+            // turn button clicked back to blue
+            event.target.classList.remove('btn-danger');
+            event.target.classList.add('btn-info');
+
             endGame();
         }, 1000);
     }
