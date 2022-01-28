@@ -35,6 +35,8 @@ let timerEl = document.getElementById('time');
 let timeInterval;
 // declare timer variable
 let timerCount;
+// reference -10sec when user get answer wrong
+const deductEl = document.getElementById('deduct');
 
 // QUESTIONS
 // start with question 1
@@ -126,6 +128,7 @@ const questionAnswer = [
 
 // function to start the quiz
 function startQuiz() {
+
     // set timer time
     timerCount = 200;
     // set displayed time equal to starting time
@@ -227,7 +230,19 @@ function clickedAnswer(event) {
     }
     // if the question is incorrect, subtract 10 secs
     else {
+
+        // display -10 
+        deductEl.classList.remove('hide');
+        deductEl.classList.add('start');
+
+        // deduct by 10sec
         timerCount-=10;
+
+        setTimeout(function () {
+            // remove -10 
+            deductEl.classList.remove('start');
+            deductEl.classList.add('hide');
+        }, 0.4*1000);
     }
 };
 

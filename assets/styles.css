@@ -28,13 +28,19 @@ body {
 /* HIGHSCORES LINK STYLES END */
 
 /* TIMER STYLES START */
-.timer {
+.timer,
+.minus {
   color: red;
   font-size: 25px;
   font-weight: bold;
   position: absolute;
   top: 30px;
   right: 30px;
+}
+
+.minus {
+  top: 60px;
+  right: 40px;
 }
 /* TIMER STYLES END */
 
