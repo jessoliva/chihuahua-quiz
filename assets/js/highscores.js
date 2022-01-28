@@ -22,8 +22,10 @@ function loadsScores() {
 
         // show no scores yet screen
         noScoresEl.classList.remove('hide');
-        nocoresEl.classList.add('start');
-
+        noScoresEl.classList.add('start');
+        
+        // return to remove error
+        return;
     }
 
     // turn loaded scores into array
@@ -53,7 +55,10 @@ function loadsScores() {
 loadsScores();
 
 // clear scores from local storage
-function clearScores() {
+function clearScores(event) {
+
+    // make button clicked out of focus to return 
+    event.target.blur();
 
     // clear local storage
     localStorage.clear();
