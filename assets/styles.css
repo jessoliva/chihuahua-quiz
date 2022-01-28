@@ -1,0 +1,60 @@
+.body {
+  font-family: Arial;
+  font-size: 120%;
+  background-color: #000000;  
+}
+
+/* HIGHSCORES LINK STYLES START */
+.scores {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.scores a {
+  color: #17a3b8;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+.scores a:hover {
+  color: pink;
+}
+/* HIGHSCORES LINK STYLES END */
+
+/* TIMER STYLES START */
+.timer {
+  color: red;
+  font-size: 25px;
+  font-weight: bold;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+/* TIMER STYLES END */
+
+/* STYLES FOR ALL SCREENS START */
+.wrapper {
+  margin: 150px auto 0 auto;
+  max-width: 600px;
+}
+
+/* hides containers */
+.hide {
+  display: none;
+}
+
+/* shows containers  */
+.start {
+  text-align: center;
+}
+/* STYLES FOR ALL SCREENS END */
+
+/* START SCREEN STYLES START */
+.screen-start {
+  background-color: pink;
+  box-shadow: 0px 0px 40px 5px pink;
+}
+/* START SCREEN STYLES END */
