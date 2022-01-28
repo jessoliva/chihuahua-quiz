@@ -19,6 +19,8 @@ const userSubmit = document.getElementById('submit');
 
 // LOSE SCREEN
 const loseScreen = document.getElementById('lose-screen');
+// reference restart button to allow user to restart game
+const quizRestart = document.getElementById('restart');
 
 // TIMER
 let timerEl = document.getElementById('time');  
@@ -235,3 +237,21 @@ function enterKeyPressed(event) {
        return true;
     }
 };
+
+// if the user loses, give option to restart quiz
+function restartQuiz() {
+    // hide end screen
+    loseScreen.classList.remove('start');
+    loseScreen.classList.add('hide');
+
+    // display questions screen
+    questionsScreen.classList.remove('hide');
+    questionsScreen.classList.add('start');
+
+    // restart quiz from beginning
+    startQuiz();
+};
+
+// when  button is clicked, save score
+quizRestart.addEventListener('click', restartQuiz);
+
