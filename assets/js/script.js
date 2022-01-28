@@ -12,6 +12,10 @@ const questionText = document.getElementById('question-title');
 
 // END GAME SCREEN
 const endScreen = document.getElementById('end-screen');
+// empty array to hold each user input and final score
+let users = [];
+// reference submit button to save user score
+const userSubmit = document.getElementById('submit');
 
 // LOSE SCREEN
 const loseScreen = document.getElementById('lose-screen');
@@ -180,3 +184,46 @@ function endGame() {
     let displayedScore = document.getElementById('final-score');
     displayedScore.innerText = timerCount;
 };
+
+// get the users doggo-name and score and save it to local storage
+function saveScore() {
+
+    // get users input value
+    let userDoggo = document.getElementById('doggo-name').value;
+
+    // set user score to time remaining
+    let userScore = timerCount;
+
+    // if user enters valid response, save info, else alert
+    if (userDoggo.length > 0) {
+
+        alert("Your score has been saved!");
+
+        // push the input name and score into empty array
+        users.push ({
+            user: userDoggo,
+            score: userScore
+        });
+    }
+    else {
+        alert("Please enter a valid response!")
+        return;
+    }
+
+    // save users array to local storage but stringify first
+    localStorage.setItem('highScores', JSON.stringify(users));
+
+    // hide end screen
+    endScreen.classList.remove('start');
+    endScreen.classList.add('hide');
+
+    // show start game screen
+    startScreen.classList.remove('hide');
+    startScreen.classList.add('start');
+
+    // reset timer text
+    timerEl.textContent = 200;
+};
+
+// when submit button is clicked, save score
+userSubmit.addEventListener('click', saveScore);
