@@ -80,3 +80,48 @@ body {
   box-shadow: 0 0 40px 5px red;
 }
 /* LOSE SCREEN STYLES END */
+
+/* HIGHSCORES HTML STYLES START */
+.hs-body {
+  background-color: black;
+}
+
+.hs-body .wrapper {
+  margin: 100px auto 0 auto;
+  max-width: 450px;
+}
+
+.hs-body h1 {
+  text-shadow: 3px 3px 15px hotpink;
+  padding-bottom: 40px;
+}
+
+.hs-body ol {
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 0 20px 5px white;
+  padding-left: 0px;
+  margin-bottom: 50px;
+  max-height: 400px;
+  overflow: auto;
+}
+
+.hs-body li {
+  list-style: decimal inside none;
+  background-color:  #17a3b8;
+  padding: 10px;
+}
+
+.hs-body li:nth-child(odd) {
+  background-color: pink;
+}
+
+.hs-body button {
+  box-shadow: 0 0 10px 5px hotpink;
+}
+
+/* NO SCORES DIV STYLES START */
+.hs-body .scores-no {
+  padding-bottom: 40px;
+}
+/* HIGHSCORES HTML STYLES END */
