@@ -9,6 +9,11 @@ const startScreen = document.getElementById('start-screen');
 const questionsScreen = document.getElementById('questions');
 // reference location where questions will display
 const questionText = document.getElementById('question-title');
+// reference locations where answer choices will display
+const choice1Text = document.getElementById('choice1');
+const choice2Text = document.getElementById('choice2');
+const choice3Text = document.getElementById('choice3');
+const choice4Text = document.getElementById('choice4');
 
 // END GAME SCREEN
 const endScreen = document.getElementById('end-screen');
@@ -39,42 +44,82 @@ let currQuestionIndex = 0;
 const questionAnswer = [
     {
         question: 'which chihuahua is black?',
+        choice1: 'pinky',
+        choice2: 'mini',
+        choice3: 'potato',
+        choice4: 'timone',
         answer: 'mini'
     },
     {
         question: 'which chihuahua is tan?',
+        choice1: 'mini',
+        choice2: 'momo',
+        choice3: 'jedi',
+        choice4: 'flash',
         answer: 'flash'
     },
     {
         question: 'which chihuahua is white?',
+        choice1: 'jedi',
+        choice2: 'flash',
+        choice3: 'winnie',
+        choice4: 'tweety',
         answer: 'jedi'
     },
     {
         question: 'which chihuahua is brown?',
+        choice1: 'flash',
+        choice2: 'mini',
+        choice3: 'tweety',
+        choice4: 'peke',
         answer: 'peke'
     },
     {
         question: 'which chihuahua has a tiny white spot on their head?',
+        choice1: 'peke',
+        choice2: 'mini',
+        choice3: 'poo-bear',
+        choice4: 'jedi',
         answer: 'peke'
     },
     {
         question: 'which chihuahua has honey-colored eyes?',
+        choice1: 'mini',
+        choice2: 'flash',
+        choice3: 'speedy',
+        choice4: 'peke',
         answer: 'flash'
     },
     {
         question: 'which chihuahua is deaf but happiest with life?',
+        choice1: 'jedi',
+        choice2: 'rex',
+        choice3: 'flash',
+        choice4: 'mini',
         answer: 'jedi'
     },
     {
         question: 'which chihuahua weights the least?',
+        choice1: 'peke',
+        choice2: 'honey',
+        choice3: 'mini',
+        choice4: 'pumba',
         answer: 'mini'
     },
     {
         question: 'which chihuahua is the slowest?',
+        choice1: 'flash',
+        choice2: 'mini',
+        choice3: 'chiquis',
+        choice4: 'jedi',
         answer: 'flash'
     },
     {
         question: 'which chihuahua jumps the highest?',
+        choice1: 'jedi',
+        choice2: 'mini',
+        choice3: 'cheese',
+        choice4: 'peke',
         answer: 'peke'
     },
 ];
@@ -139,8 +184,23 @@ function startTimer() {
 // display questions
 function displayQuestions() {
 
+    // set question of current index
     let currQuestion = questionAnswer[currQuestionIndex];
+
+    // display current question 
     questionText.innerText = currQuestion.question;
+
+    // set answer choices of current index
+    let currChoice1 = questionAnswer[currQuestionIndex];
+    let currChoice2 = questionAnswer[currQuestionIndex];
+    let currChoice3 = questionAnswer[currQuestionIndex];
+    let currChoice4 = questionAnswer[currQuestionIndex];
+
+    // display answer choices
+    choice1Text.innerText = currQuestion.choice1;
+    choice2Text.innerText = currQuestion.choice2;
+    choice3Text.innerText = currQuestion.choice3;
+    choice4Text.innerText = currQuestion.choice4;
 };
 
 // get value from clicked button and compare to correct answer
