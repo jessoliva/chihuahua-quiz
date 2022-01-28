@@ -228,37 +228,6 @@ function clickedAnswer(event) {
             displayQuestions();
         }
     } 
-    // // if the current question is the last question & the user answer is incorrect, end the game
-    // else if (currQuestionIndex === 9 && userAnswer != questionAnswer[currQuestionIndex].answer) {
-    //     // deduct by 10sec
-    //     timerCount-=10;
-    //     // update timer display text
-    //     timerEl.textContent = timerCount;
-
-    //     // turn button clicked with wrong answer red
-    //     event.target.classList.remove('btn-info');
-    //     event.target.classList.add('btn-danger');
-
-    //     // display -10 
-    //     deductEl.classList.remove('hide');
-    //     deductEl.classList.add('start');
-
-    //     // delay removal of -10sec display
-    //     setTimeout(function () {
-    //         // remove -10 
-    //         deductEl.classList.remove('start');
-    //         deductEl.classList.add('hide');
-    //     }, 1000);
-
-    //     // delay display of end screen
-    //     setTimeout(function () {
-    //         // turn button clicked back to blue
-    //         event.target.classList.remove('btn-danger');
-    //         event.target.classList.add('btn-info');
-
-    //         endGame();
-    //     }, 1000);
-    // }
     // if the question is incorrect, subtract 10 secs and move onto next question or end game
     else {
 
