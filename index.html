@@ -90,6 +90,30 @@
           </div>
         </div>
       </div>
+
+      <!-- end screen section // game ended, user didn't lose -->
+      <div id="end-screen" class="hide screen-end rounded">
+        <h2 class="p-4 m-0">
+          You finished the quiz! Great accomplishment. It's too difficult for
+          some. To save your score, you get to name your doggo
+          <i class="fas fa-dog"></i>
+        </h2>
+        <p class="p-2 m-0">
+          Your final score is <span id="final-score"></span>.
+        </p>
+        <p class="p-4 dog-name">
+          Enter Doggo Name:
+          <input
+            type="text"
+            id="initials"
+            maxlength="10"
+            minlength="1"
+          />
+          <button id="submit" class="btn btn-info mb-1">
+            Submit
+          </button>
+        </p>
+      </div>
       
       
 
