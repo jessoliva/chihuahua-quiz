@@ -18,8 +18,16 @@ const loseScreen = document.getElementById('lose-screen');
 
 // TIMER
 let timerEl = document.getElementById('time');  
+// declare timeInterval
+let timeInterval;
+// declare timer variable
+let timerCount;
 
 // QUESTIONS
+// start with question 1
+let currQuestionIndex = 0;
+
+// questions array
 const questionAnswer = [
     {
         question: 'which chihuahua is black?',
@@ -65,6 +73,13 @@ const questionAnswer = [
 
 // function to start the quiz
 function startQuiz() {
+    // set timer time
+    timerCount = 200;
+    // set displayed time equal to starting time
+    timerEl.textContent = timerCount;
+    // start timer callback
+    startTimer();
+
     // hide start screen
     startScreen.classList.remove('start');
     startScreen.classList.add('hide');
@@ -73,9 +88,49 @@ function startQuiz() {
     questionsScreen.classList.remove('hide');
     questionsScreen.classList.add('start');
 
+
     // call showQuestions function to display questions
     displayQuestions();
 };
 
 // when start quiz button is clicked, run startQuiz
 startBtn.addEventListener('click', startQuiz);
+
+// start timer 
+function startTimer() {
+
+    // setInterval @ 1sec
+    timeInterval = setInterval(function() {
+
+        // deduct timerCount -1 after 1sec
+        timerCount -= 1;
+
+        // let the displayed time equal this value
+        timerEl.textContent = timerCount;
+
+        // if time is less than or equal to 0, run this
+        if (timerCount <= 0) {
+
+            // hide questions screen
+            questionsScreen.classList.remove('start');
+            questionsScreen.classList.add('hide');
+
+            // show lose screen
+            loseScreen.classList.remove('hide');
+            loseScreen.classList.add('start');
+
+            // set displayed time to 00
+            timerEl.textContent = '00';
+
+            // stop the timer
+            clearInterval(timeInterval);
+        }
+    }, 1000);
+};
+
+// display questions
+function displayQuestions() {
+
+    let currQuestion = questionAnswer[currQuestionIndex];
+    questionText.innerText = currQuestion.question;
+};
