@@ -231,18 +231,32 @@ function clickedAnswer(event) {
     // if the question is incorrect, subtract 10 secs
     else {
 
+        // deduct by 10sec
+        timerCount-=10;
+
+        // turn button clicked with wrong answer red
+        event.target.classList.remove('btn-info');
+        event.target.classList.add('btn-danger');
+
         // display -10 
         deductEl.classList.remove('hide');
         deductEl.classList.add('start');
 
-        // deduct by 10sec
-        timerCount-=10;
+        setTimeout(function () {
+            // turn button clicked back to blue
+            event.target.classList.remove('btn-danger');
+            event.target.classList.add('btn-info');
+
+            // go to next question
+            currQuestionIndex++;
+            displayQuestions();
+        }, 1000);
 
         setTimeout(function () {
             // remove -10 
             deductEl.classList.remove('start');
             deductEl.classList.add('hide');
-        }, 0.4*1000);
+        }, 1000);
     }
 };
 
