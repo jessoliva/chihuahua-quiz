@@ -83,3 +83,11 @@ body {
   font-size: 20px;
 }
 /* END SCREEN STYLES END */
+
+/* LOSE SCREEN STYLES START */
+.screen-lose {
+  color: white;
+  background-color: rgb(250, 76, 76);
+  box-shadow: 0 0 40px 5px red;
+}
+/* LOSE SCREEN STYLES END */
