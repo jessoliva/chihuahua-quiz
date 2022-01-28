@@ -215,7 +215,7 @@ function clickedAnswer(event) {
     // make button clicked out of focus to return 
     event.target.blur();
 
-    // if userAnswer = the answer to the current question do this
+    // if userAnswer = the answer to the current question show next question
     if (userAnswer === questionAnswer[currQuestionIndex].answer) {
 
         // if the current question is the last question, end the game
@@ -227,8 +227,35 @@ function clickedAnswer(event) {
             currQuestionIndex++;
             displayQuestions();
         }
+    } 
+    // if the current question is the last question & the user answer is incorrect, end the game
+    else if (currQuestionIndex === 9 && userAnswer != questionAnswer[currQuestionIndex].answer) {
+        // deduct by 10sec
+        timerCount-=10;
+        // update timer display text
+        timerEl.textContent = timerCount;
+
+        // turn button clicked with wrong answer red
+        event.target.classList.remove('btn-info');
+        event.target.classList.add('btn-danger');
+
+        // display -10 
+        deductEl.classList.remove('hide');
+        deductEl.classList.add('start');
+
+        // delay removal of -10sec display
+        setTimeout(function () {
+            // remove -10 
+            deductEl.classList.remove('start');
+            deductEl.classList.add('hide');
+        }, 1000);
+
+        // delay display of end screen
+        setTimeout(function () {
+            endGame();
+        }, 1000);
     }
-    // if the question is incorrect, subtract 10 secs
+    // if the question is incorrect, subtract 10 secs and move onto next question
     else {
 
         // deduct by 10sec
@@ -242,6 +269,14 @@ function clickedAnswer(event) {
         deductEl.classList.remove('hide');
         deductEl.classList.add('start');
 
+        // delay removal of -10sec display
+        setTimeout(function () {
+            // remove -10 
+            deductEl.classList.remove('start');
+            deductEl.classList.add('hide');
+        }, 1000);
+        
+        // delay display of next question 
         setTimeout(function () {
             // turn button clicked back to blue
             event.target.classList.remove('btn-danger');
@@ -250,12 +285,6 @@ function clickedAnswer(event) {
             // go to next question
             currQuestionIndex++;
             displayQuestions();
-        }, 1000);
-
-        setTimeout(function () {
-            // remove -10 
-            deductEl.classList.remove('start');
-            deductEl.classList.add('hide');
         }, 1000);
     }
 };
