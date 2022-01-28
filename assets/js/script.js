@@ -146,7 +146,7 @@ function clickedAnswer(event) {
 
         // if the current question is the last question, end the game
         if (currQuestionIndex === 9) {
-            // endGame();
+            endGame();
         }
         // else, go to the next question
         else {
@@ -158,4 +158,22 @@ function clickedAnswer(event) {
     else {
         timerCount-=10;
     }
+};
+
+// displays endScreen once last question has been asked AND user answered it correctly
+function endGame() {
+    // stop the time
+    clearInterval(timeInterval);
+
+    // hide questions screen
+    questionsScreen.classList.remove('start');
+    questionsScreen.classList.add('hide');
+
+    // show end game screen
+    endScreen.classList.remove('hide');
+    endScreen.classList.add('start');
+
+    // grab the time left as a score and display it on the screen
+    let displayedScore = document.getElementById('final-score');
+    displayedScore.innerText = timerCount;
 };
