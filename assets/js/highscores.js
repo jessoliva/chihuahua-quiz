@@ -1,8 +1,11 @@
-// get parent ol element for lists
+// SCORES ELEMENTS
 const highScoresEl = document.getElementById('highscores');
 
-// NO SCORES SCREEN
+// NO SCORES CONTAINER
 const noScoresEl = document.getElementById('no-scores');
+
+// reference clear button 
+const clearBtn = document.getElementById('clear');
 
 // load scores saved onto local storage
 function loadsScores() {
@@ -48,3 +51,21 @@ function loadsScores() {
     }
 };
 loadsScores();
+
+// clear scores from local storage
+function clearScores() {
+
+    // clear local storage
+    localStorage.clear();
+
+    // hide ol list
+    highScoresEl.classList.remove('start');
+    highScoresEl.classList.add('hide');
+
+    // show no scores yet container
+    noScoresEl.classList.remove('hide');
+    noScoresEl.classList.add('start');
+};
+
+// when submit button is clicked, save score
+clearBtn.addEventListener('click', clearScores);
