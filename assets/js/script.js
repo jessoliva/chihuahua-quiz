@@ -227,3 +227,11 @@ function saveScore() {
 
 // when submit button is clicked, save score
 userSubmit.addEventListener('click', saveScore);
+
+// if enter key is pressed after doggo name input, save score as well
+function enterKeyPressed(event) {
+    if (event.keyCode == 13) {
+       saveScore();
+       return true;
+    }
+};

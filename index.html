@@ -96,7 +96,7 @@
       </div>
 
       <!-- end screen section // game ended, user didn't lose -->
-      <div id="end-screen" class="hide screen-end rounded">
+      <div id="end-screen" class="start screen-end rounded">
         <h2 class="p-4 m-0">
           You finished the quiz! Great accomplishment. It's too difficult for
           some. To save your score, you get to name your doggo
@@ -112,6 +112,7 @@
             id="doggo-name"
             maxlength="10"
             minlength="1"
+            onkeypress="return enterKeyPressed(event)"
           />
           <button id="submit" class="btn btn-info mb-1">
             Submit
