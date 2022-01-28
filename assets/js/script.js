@@ -134,3 +134,28 @@ function displayQuestions() {
     let currQuestion = questionAnswer[currQuestionIndex];
     questionText.innerText = currQuestion.question;
 };
+
+// get value from clicked button and compare to correct answer
+function clickedAnswer(event) {
+
+    // let userAnswer = the text of the button the user clicked
+    let userAnswer = event.target.innerText;
+
+    // if userAnswer = the answer to the current question do this
+    if (userAnswer === questionAnswer[currQuestionIndex].answer) {
+
+        // if the current question is the last question, end the game
+        if (currQuestionIndex === 9) {
+            // endGame();
+        }
+        // else, go to the next question
+        else {
+            currQuestionIndex++;
+            displayQuestions();
+        }
+    }
+    // if the question is incorrect, subtract 10 secs
+    else {
+        timerCount-=10;
+    }
+};
