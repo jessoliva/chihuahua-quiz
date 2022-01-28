@@ -21,6 +21,8 @@ const userSubmit = document.getElementById('submit');
 const loseScreen = document.getElementById('lose-screen');
 // reference restart button to allow user to restart game
 const quizRestart = document.getElementById('restart');
+// reference home button to allow user to return to home screen
+const goHome = document.getElementById('home');
 
 // TIMER
 let timerEl = document.getElementById('time');  
@@ -254,4 +256,21 @@ function restartQuiz() {
 
 // when  button is clicked, save score
 quizRestart.addEventListener('click', restartQuiz);
+
+// if the user loses, give option to go back to home screen
+function homeScreen() {
+    // hide end screen
+    loseScreen.classList.remove('start');
+    loseScreen.classList.add('hide');
+
+    // display start screen
+    startScreen.classList.remove('hide');
+    startScreen.classList.add('start');
+
+    // reset timer text
+    timerEl.textContent = 200;
+};
+
+// when  button is clicked, save score
+goHome.addEventListener('click', homeScreen);
 
