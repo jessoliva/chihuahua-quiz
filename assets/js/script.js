@@ -140,6 +140,9 @@ function clickedAnswer(event) {
 
     // let userAnswer = the text of the button the user clicked
     let userAnswer = event.target.innerText;
+    
+    // make button clicked out of focus to return 
+    event.target.blur();
 
     // if userAnswer = the answer to the current question do this
     if (userAnswer === questionAnswer[currQuestionIndex].answer) {
