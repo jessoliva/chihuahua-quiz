@@ -189,6 +189,25 @@ function endGame() {
     displayedScore.innerText = timerCount;
 };
 
+// loads scores from local storage, if any, to save into users empty array first
+function loadScores() {
+
+    // load saved scores
+    let savedScores = localStorage.getItem('highScores');
+    // turn savedScores into an array
+    savedScores = JSON.parse(savedScores);
+
+    // if there are no scores to display, do nothing
+    if (savedScores === null) {
+        return;
+    }
+    // else there are scores to display, add them to the users []; empty array
+    else {
+        users = savedScores;
+    }
+};
+loadScores();
+
 // get the users doggo-name and score and save it to local storage
 function saveScore() {
 
