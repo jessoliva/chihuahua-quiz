@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chihuahua Quiz!</title>
 
     <!-- css link -->
@@ -24,10 +24,10 @@
       src="https://kit.fontawesome.com/dd5e33ee8b.js"
       crossorigin="anonymous"
     ></script>
-</head>
+  </head>
 
-<body class="body">
-  <div class="scores"><a href="highscores.html">View Highscores</a></div>
+  <body class="body">
+    <div class="scores"><a href="highscores.html">View Highscores</a></div>
 
     <div class="timer">Time: <span id="time">150</span></div>
     <div id="deduct" class="minus hide">-10 sec!</div>
@@ -56,12 +56,11 @@
       <!-- questions screen section -->
       <div id="questions" class="hide screen-questions py-4 rounded-3">
         <h2 id="question-title" class="p-4 m-0">Question Text</h2>
-        <div
-          class="container d-flex justify-content-center"
-        >
+        <div class="container d-flex justify-content-center">
           <div class="row">
             <div class="col-6 p-2">
-              <button id="choice1"
+              <button
+                id="choice1"
                 class="btn btn-info btn-block"
                 onclick="clickedAnswer(event)"
               >
@@ -69,7 +68,8 @@
               </button>
             </div>
             <div class="col-6 p-2">
-              <button id="choice2"
+              <button
+                id="choice2"
                 class="btn btn-info btn-block"
                 onclick="clickedAnswer(event)"
               >
@@ -77,7 +77,8 @@
               </button>
             </div>
             <div class="col-6 p-2">
-              <button id="choice3"
+              <button
+                id="choice3"
                 class="btn btn-info btn-block"
                 onclick="clickedAnswer(event)"
               >
@@ -85,7 +86,8 @@
               </button>
             </div>
             <div class="col-6 p-2">
-              <button id="choice4"
+              <button
+                id="choice4"
                 class="btn btn-info btn-block"
                 onclick="clickedAnswer(event)"
               >
@@ -115,9 +117,7 @@
             minlength="1"
             onkeypress="return enterKeyPressed(event)"
           />
-          <button id="submit" class="btn btn-info mb-1">
-            Submit
-          </button>
+          <button id="submit" class="btn btn-info mb-1">Submit</button>
         </p>
       </div>
 
@@ -131,16 +131,14 @@
             Do you want to play again?
           </button>
         </div>
-        <h2 class="p-4 m-0">Or return to </h2>
+        <h2 class="p-4 m-0">Or return to</h2>
         <div class="pb-4">
-          <button id="home" class="btn btn-dark btn-lg">
-            Home Screen
-          </button>
+          <button id="home" class="btn btn-dark btn-lg">Home Screen</button>
         </div>
-      </div>  
+      </div>
     </div>
 
     <!-- script.js link -->
     <script src="assets/js/script.js"></script>
-</body>
+  </body>
 </html>
