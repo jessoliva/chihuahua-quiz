@@ -39,8 +39,7 @@ let timerCount;
 const deductEl = document.getElementById('deduct');
 
 // QUESTIONS
-// start with question 1
-let currQuestionIndex = 0;
+let currQuestionIndex;
 
 // questions array
 const questionAnswer = [
@@ -87,8 +86,8 @@ const questionAnswer = [
     {
         question: 'which chihuahua has honey-colored eyes?',
         choice1: 'mini',
-        choice2: 'flash',
-        choice3: 'speedy',
+        choice2: 'speedy',
+        choice3: 'flash',
         choice4: 'peke',
         answer: 'flash'
     },
@@ -130,7 +129,7 @@ const questionAnswer = [
 function startQuiz() {
 
     // set timer time
-    timerCount = 200;
+    timerCount = 150;
     // set displayed time equal to starting time
     timerEl.textContent = timerCount;
     // start timer callback
@@ -144,7 +143,8 @@ function startQuiz() {
     questionsScreen.classList.remove('hide');
     questionsScreen.classList.add('start');
 
-
+    // start with question 1
+    currQuestionIndex = 0;
     // call showQuestions function to display questions
     displayQuestions();
 };
@@ -350,7 +350,7 @@ function saveScore() {
     startScreen.classList.add('start');
 
     // reset timer text
-    timerEl.textContent = 200;
+    timerEl.textContent = 150;
 };
 
 // when submit button is clicked, save score
@@ -392,7 +392,7 @@ function homeScreen() {
     startScreen.classList.add('start');
 
     // reset timer text
-    timerEl.textContent = 200;
+    timerEl.textContent = 150;
 };
 
 // when  button is clicked, save score
