@@ -1,3 +1,4 @@
+/* GENERAL BODY STYLES START */
 body {
   font-family: Arial;
   font-size: 120%;
@@ -6,6 +7,7 @@ body {
 .body {
   background-color: #000000;
 }
+/* GENERAL BODY STYLES END */
 
 /* HIGHSCORES LINK STYLES START */
 .scores {
@@ -28,8 +30,7 @@ body {
 /* HIGHSCORES LINK STYLES END */
 
 /* TIMER STYLES START */
-.timer,
-.minus {
+.timer {
   color: red;
   font-size: 25px;
   font-weight: bold;
@@ -39,14 +40,19 @@ body {
 }
 
 .minus {
-  top: 40px;
-  right: 640px;
+  color: red;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
 }
 /* TIMER STYLES END */
 
 /* STYLES FOR ALL SCREENS START */
 .wrapper {
-  margin: 100px auto 0 auto;
+  margin: 110px auto 0 auto;
   max-width: 600px;
 }
 
