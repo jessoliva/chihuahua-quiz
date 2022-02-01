@@ -34,7 +34,7 @@ function loadsScores() {
     // sort object by high score
     savedScores.sort((a, b) => b.score - a.score);
 
-    // 
+    // iterate through the savedScores array
     for (var i = 0; i < savedScores.length; i++) {
         
         // set user doggo name to a variable to loop through

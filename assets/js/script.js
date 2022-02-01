@@ -1,3 +1,6 @@
+// TO DO
+// DRY hide and show screens --> make a function to do that and call it
+
 // START SCREEN
 // reference Start Quiz <button> with id="start"
 const startBtn = document.getElementById('start');
@@ -360,7 +363,6 @@ userSubmit.addEventListener('click', saveScore);
 function enterKeyPressed(event) {
     if (event.keyCode == 13) {
        saveScore();
-       return true;
     }
 };
 

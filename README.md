@@ -92,5 +92,7 @@ To build this application, I wrote code that overall does the following:
 
 ## Credits
 - Web Dev Simplified - [Build A Quiz App With Javascript](https://www.youtube.com/watch?v=riDzcEQbX6k)
+- [Stack Overflow: Enter Key](https://stackoverflow.com/questions/16011312/how-can-i-execute-a-function-on-pressing-the-enter-key-in-an-input-field)
+- [tutorialspoint](https://www.tutorialspoint.com/enter-key-press-event-in-javascript)
 - [Stack Overflow: Reset Bootstrap Button](https://stackoverflow.com/questions/63359425/reset-bootstrap-button-to-the-normal-styles-after-clicking)
 - Badges - [Shields.io](https://shields.io/)
